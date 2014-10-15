@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery UI</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="js/libs/jqueryui/css/jquery-ui.min.css"> 
+    </head>
+    <body>
+        jQuery UIのデートピッカーを適用したテキストボックス
+        <br>
+        <input type="text" id="date">
+        <br>
+
+        （参考）HTML5のtype=dateテキストボックス
+        <br>
+        <input type="date">
+        <br>
+
+        スライダー（オプション指定、水平）
+        <div id="mySliderDiv1"></div>
+        スライダー（オプション指定、垂直）
+        <div id="mySliderDiv2"></div>
+        スライダー（複数のオプションを指定）
+        <div id="mySliderDiv3"></div>
+
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script src="js/libs/jqueryui/jquery-ui.min.js"></script>
+        <script>
+            $(function() {
+                $("#date").datepicker();
+
+                $("#mySliderDiv1").slider({
+                    orientation: "horizontal"
+                });
+                $("#mySliderDiv2").slider({
+                    orientation: "vertical"
+                });
+                // オプションを複数指定。
+                // カンマで区切る
+                $("#mySliderDiv3").slider({
+                    orientation: "vertical",
+                    min: 0,
+                    max: 150,
+                    value: 50
+                });
+            });
+        </script>
+    </body>
+</html>
